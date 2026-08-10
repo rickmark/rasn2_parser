@@ -152,6 +152,7 @@ public:
 
   public:
       static const std::regex word_pattern;
+      static const std::regex number_pattern;
 
 
   class ModuleDefinitionContext;

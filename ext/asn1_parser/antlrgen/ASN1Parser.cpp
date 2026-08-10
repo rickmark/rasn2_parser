@@ -938,6 +938,7 @@ antlr4::atn::SerializedATNView ASN1Parser::getSerializedATN() const {
 
 
 const std::regex ASN1Parser::word_pattern(".*[a-z]+.*");
+const std::regex ASN1Parser::number_pattern(".*[0-9]+.*");
 
 
 //----------------- ModuleDefinitionContext ------------------------------------------------------------------
@@ -20478,7 +20479,7 @@ ASN1Parser::WordContext* ASN1Parser::word() {
     enterOuterAlt(_localctx, 1);
     setState(1878);
 
-    if (!( !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) )) throw FailedPredicateException(this, " !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) ");
+    if (!( !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), number_pattern) )) throw FailedPredicateException(this, " !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), number_pattern) ");
     setState(1879);
     match(ASN1Parser::ReferenceItem);
    
@@ -23014,7 +23015,7 @@ bool ASN1Parser::objectclassreferenceSempred(ObjectclassreferenceContext *_local
 
 bool ASN1Parser::wordSempred(WordContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 4: return  !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) ;
+    case 4: return  !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), number_pattern) ;
 
   default:
     break;

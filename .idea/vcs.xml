@@ -2,7 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/build/_deps/rice-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ext/asn1_parser/antlr4-upstream" vcs="Git" />
   </component>
 </project>

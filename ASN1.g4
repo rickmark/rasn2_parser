@@ -34,10 +34,12 @@ grammar ASN1;
 @parser::members {
 public:
     static const std::regex word_pattern;
+    static const std::regex number_pattern;
 }
 
 @parser::definitions {
 const std::regex ASN1Parser::word_pattern(".*[a-z]+.*");
+const std::regex ASN1Parser::number_pattern(".*[0-9]+.*");
 }
 
 // X.680: 12.1
@@ -637,7 +639,7 @@ objectfieldreference : '&' IdentifierOrValueItem ;
 // X.681: 7.8
 objectsetfieldreference : '&' ReferenceItem ;
 // X.681: 7.9
-word : { !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) }? ReferenceItem ;
+word : { !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), number_pattern) }? ReferenceItem ;
 
 // X.683: 8: Parameterized assignments
 // X.683: 8.1
