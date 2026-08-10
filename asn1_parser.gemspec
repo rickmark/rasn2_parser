@@ -4,8 +4,8 @@ require 'asn1_parser/version'
 Gem::Specification.new do |s|
   s.name     = 'asn1_parser'
   s.version  = ::ASN1Parser::VERSION
-  s.authors  = ['Mickey Mouse']
-  s.email    = ['mickey@disney.com']
+  s.authors  = ['Rick Mark']
+  s.email    = ['rickmark@outlook.com']
   s.homepage = 'https://github.com/mickeymouse/lua-parser-rb'
 
   s.description = s.summary = 'A Lua parser for Ruby'
@@ -18,11 +18,13 @@ Gem::Specification.new do |s|
 
   s.require_path = 'lib'
   s.files = Dir[
-    '{lib,spec}/**/*',
+    'bin/*',
+    '{lib,spec}/**/*.rb',
     'ext/asn1_parser/*.{cpp,h}',
-    'ext/asn1_parser/extconf.rb',
+    'ext/asn1_parser/CMakeLists.txt',
+    'ext/asn1_parser/VERSION',
     'ext/asn1_parser/antlrgen/*',
-    'ext/asn1_parser/antlr4-upstream/runtime/Cpp/runtime/src/**/*.{cpp,h}',
+    'ext/asn1_parser/antlr4-upstream/runtime/Cpp/**/*',
     'Gemfile',
     'README.md',
     'Rakefile',
