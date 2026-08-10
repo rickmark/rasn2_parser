@@ -2,7 +2,7 @@ $:.unshift File.join(File.dirname(__FILE__), 'lib')
 require 'asn1_parser/version'
 
 Gem::Specification.new do |s|
-  s.name     = 'asn1_parser'
+  s.name     = 'asn_parser'
   s.version  = ::ASN1Parser::VERSION
   s.authors  = ['Rick Mark']
   s.email    = ['rickmark@outlook.com']
