@@ -2,6 +2,7 @@ require 'bundler'
 
 require 'antlr4-native'
 require 'etc'
+require 'rspec/core/rake_task'
 
 def ruby_installer?
   Object.const_defined?(:RubyInstaller)
@@ -38,4 +39,6 @@ namespace :cmake do
   end
 end
 
-task default: %w[generate cmake:build]
+RSpec::Core::RakeTask.new(:spec)
+
+task default: %w[generate cmake:build spec]
