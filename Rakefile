@@ -19,10 +19,23 @@ task :generate do
   generator.generate
 end
 
-task :compile do
-  Dir.chdir(File.join(%w(ext asn1_parser))) do
-    load 'extconf.rb'
-    RubyInstaller::Runtime.enable_msys_apps if ruby_installer?
-    exec "make -j #{Etc.nprocessors}"
+
+namespace :cmake do
+  desc "Configure and build the CMake project"
+  task :build do
+    build_dir = "build"
+    mkdir_p build_dir
+
+    cd build_dir do
+      sh "cmake ../ext/asn1_parser"
+      sh "cmake --build ."
+    end
+  end
+
+  desc "Clean CMake build files"
+  task :clean do
+    rm_rf "build"
   end
 end
+
+task default: %w[generate cmake:build]

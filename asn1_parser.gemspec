@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rice', '~> 4.0'
 
-  s.extensions = File.join(*%w(ext asn1_parser extconf.rb))
+  s.extensions = ['ext/asn1_parser/CMakeLists.txt']
 
   s.require_path = 'lib'
   s.files = Dir[

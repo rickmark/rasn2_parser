@@ -5,3 +5,5 @@ pkg/
 ext/asn1_parser/Makefile
 ext/asn1_parser/mkmf.log
 *.bundle
+build/
+.antlr

@@ -2,7 +2,7 @@
 
 require 'bundler/setup'
 require 'rspec'
-require 'asn_parser'
+require 'asn1_parser'
 require 'amazing_print'
 
 

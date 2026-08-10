@@ -1,4 +1,7 @@
 
+#include <regex>
+
+
 // Generated from ./ASN1.g4 by ANTLR 4.10.1
 
 
@@ -932,6 +935,9 @@ const dfa::Vocabulary& ASN1Parser::getVocabulary() const {
 antlr4::atn::SerializedATNView ASN1Parser::getSerializedATN() const {
   return asn1ParserStaticData->serializedATN;
 }
+
+
+const std::regex ASN1Parser::word_pattern(".*[a-z]+.*");
 
 
 //----------------- ModuleDefinitionContext ------------------------------------------------------------------
@@ -19971,7 +19977,7 @@ ASN1Parser::ObjectclassreferenceContext* ASN1Parser::objectclassreference() {
     enterOuterAlt(_localctx, 1);
     setState(1856);
 
-    if (!( !_input.LT(1).getText().matches(".*[a-z]+.*") )) throw FailedPredicateException(this, " !_input.LT(1).getText().matches(\".*[a-z]+.*\") ");
+    if (!( !std::regex_match(_input->LT(1)->getText(), word_pattern) )) throw FailedPredicateException(this, " !std::regex_match(_input->LT(1)->getText(), word_pattern) ");
     setState(1857);
     match(ASN1Parser::ReferenceItem);
    
@@ -20472,7 +20478,7 @@ ASN1Parser::WordContext* ASN1Parser::word() {
     enterOuterAlt(_localctx, 1);
     setState(1878);
 
-    if (!( !_input.LT(1).getText().matches(".*[a-z]+.*") && !_input.LT(1).getText().matches(".*[0-9]+.*") )) throw FailedPredicateException(this, " !_input.LT(1).getText().matches(\".*[a-z]+.*\") && !_input.LT(1).getText().matches(\".*[0-9]+.*\") ");
+    if (!( !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) )) throw FailedPredicateException(this, " !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) ");
     setState(1879);
     match(ASN1Parser::ReferenceItem);
    
@@ -22998,7 +23004,7 @@ bool ASN1Parser::intersectionsSempred(IntersectionsContext *_localctx, size_t pr
 
 bool ASN1Parser::objectclassreferenceSempred(ObjectclassreferenceContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 3: return  !_input.LT(1).getText().matches(".*[a-z]+.*") ;
+    case 3: return  !std::regex_match(_input->LT(1)->getText(), word_pattern) ;
 
   default:
     break;
@@ -23008,7 +23014,7 @@ bool ASN1Parser::objectclassreferenceSempred(ObjectclassreferenceContext *_local
 
 bool ASN1Parser::wordSempred(WordContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 4: return  !_input.LT(1).getText().matches(".*[a-z]+.*") && !_input.LT(1).getText().matches(".*[0-9]+.*") ;
+    case 4: return  !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) ;
 
   default:
     break;

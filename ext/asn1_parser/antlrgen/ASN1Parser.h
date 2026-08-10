@@ -1,4 +1,7 @@
 
+#include <regex>
+
+
 // Generated from ./ASN1.g4 by ANTLR 4.10.1
 
 #pragma once
@@ -145,6 +148,10 @@ public:
   const antlr4::dfa::Vocabulary& getVocabulary() const override;
 
   antlr4::atn::SerializedATNView getSerializedATN() const override;
+
+
+  public:
+      static const std::regex word_pattern;
 
 
   class ModuleDefinitionContext;

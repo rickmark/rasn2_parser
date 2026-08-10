@@ -9,4 +9,10 @@ end
 
 group :development, :test do
   gem 'rake'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'amazing_print'
+  gem 'simplecov'
+  gem 'rubocop-rake'
 end

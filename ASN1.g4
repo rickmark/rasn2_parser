@@ -27,6 +27,19 @@
 
 grammar ASN1;
 
+@header {
+#include <regex>
+}
+
+@parser::members {
+public:
+    static const std::regex word_pattern;
+}
+
+@parser::definitions {
+const std::regex ASN1Parser::word_pattern(".*[a-z]+.*");
+}
+
 // X.680: 12.1
 moduleDefinition :
       (moduleIdentifier
@@ -608,7 +621,7 @@ anyType : ANY_WORD (DEFINED_WORD BY_WORD)? identifier? ;
 
 // X.681: 7: ASN.1 lexical items
 // X.681: 7.1
-objectclassreference : { !_input.LT(1).getText().matches(".*[a-z]+.*") }? ReferenceItem ;
+objectclassreference : { !std::regex_match(_input->LT(1)->getText(), word_pattern) }? ReferenceItem ;
 // X.681: 7.2
 objectreference : IdentifierOrValueItem ;
 // X.681: 7.3
@@ -624,7 +637,7 @@ objectfieldreference : '&' IdentifierOrValueItem ;
 // X.681: 7.8
 objectsetfieldreference : '&' ReferenceItem ;
 // X.681: 7.9
-word : { !_input.LT(1).getText().matches(".*[a-z]+.*") && !_input.LT(1).getText().matches(".*[0-9]+.*") }? ReferenceItem ;
+word : { !std::regex_match(_input->LT(1)->getText(), word_pattern) && !std::regex_match(_input->LT(1)->getText(), word_pattern) }? ReferenceItem ;
 
 // X.683: 8: Parameterized assignments
 // X.683: 8.1
