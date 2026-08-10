@@ -5,7 +5,7 @@ dir_config(extension_name)
 
 have_library('stdc++')
 
-$CFLAGS << ' -std=c++17'
+$CFLAGS << ' -std=c++14'
 
 if enable_config('static')
   $defs.push '-DANTLR4CPP_STATIC' unless $defs.include?('-DANTLR4CPP_STATIC')

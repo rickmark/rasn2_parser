@@ -2,6 +2,6 @@ Gemfile.lock
 pkg/
 *.o
 *.o.tmp
-ext/asn_parser/Makefile
-ext/asn_parser/mkmf.log
+ext/asn1_parser/Makefile
+ext/asn1_parser/mkmf.log
 *.bundle
