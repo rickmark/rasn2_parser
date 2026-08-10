@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
   s.version  = ::ASN1Parser::VERSION
   s.authors  = ['Rick Mark']
   s.email    = ['rickmark@outlook.com']
-  s.homepage = 'https://github.com/mickeymouse/lua-parser-rb'
+  s.homepage = 'https://github.com/rickmark/rasn2_parser'
 
-  s.description = s.summary = 'A Lua parser for Ruby'
+  s.description = s.summary = 'A Native Gem for Parsing ASN1 Text Files'
 
   s.platform = Gem::Platform::RUBY
 
