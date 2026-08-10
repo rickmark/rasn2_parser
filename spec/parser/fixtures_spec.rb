@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe ASN1Parser do
   it 'has a version number' do
-    expect(ASN1Parser::VERSION).not_to be nil
+    expect(ASN1Parser::VERSION).not_to be_nil
   end
 
   describe 'processing all folder fixtures' do

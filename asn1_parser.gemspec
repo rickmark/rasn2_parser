@@ -1,9 +1,11 @@
-$:.unshift File.join(File.dirname(__FILE__), 'lib')
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), 'lib')
 require 'asn1_parser/version'
 
 Gem::Specification.new do |s|
   s.name     = 'asn_parser'
-  s.version  = ::ASN1Parser::VERSION
+  s.version  = ASN1Parser::VERSION
   s.authors  = ['Rick Mark']
   s.email    = ['rickmark@outlook.com']
   s.homepage = 'https://github.com/rickmark/rasn2_parser'
@@ -30,4 +32,5 @@ Gem::Specification.new do |s|
     'Rakefile',
     'asn1_parser.gemspec'
   ]
+  s.metadata['rubygems_mfa_required'] = 'true'
 end

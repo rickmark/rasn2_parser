@@ -5,7 +5,6 @@ require 'rspec'
 require 'asn1_parser'
 require 'amazing_print'
 
-
 FIXTURE_PATH = File.expand_path('fixtures', __dir__)
 
 RSpec.configure do |config|

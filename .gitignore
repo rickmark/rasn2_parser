@@ -7,3 +7,5 @@ ext/asn1_parser/mkmf.log
 *.bundle
 build/
 .antlr
+.gem_rbs_collection/
+doc/
